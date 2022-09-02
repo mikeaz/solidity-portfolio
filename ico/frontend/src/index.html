@@ -1,0 +1,122 @@
+<title>SpaceCoin ICO</title>
+<link rel="stylesheet" type="text/css" href="./index.css">
+
+<h1>SpaceCoin ICO</h1>
+
+<section>
+  <h2>Query Blockchain</h2>
+
+  <div>
+    Connected account ETH address: <span id="eth_address"></span>
+  </div>
+  <div>
+    Connected account ETH balance: <span id="eth_balance"></span>
+  </div>
+</section>
+
+<section>
+  <h2>ICO Stats</h2>
+
+  <div>
+    Current phase: <span id="ico_spc_phase"></span>
+  </div>
+
+  <div>
+    Is paused: <span id="ico_spc_pause"></span>
+  </div>
+
+  <div>
+    SPC left to buy (all phases, all accounts): <span id="ico_spc_left"></span>
+  </div>
+
+  <div>
+    Total SPC purchased so far (all accounts): <span id="ico_spc_purchased"></span>
+  </div>
+
+  <div><h2>Current Account</h2></div>
+
+
+  <div>
+    Is current account whitelisted for phase 1: <span id="account_whitelisted"></span>
+  </div>
+
+  <div>
+    Current account claimable SPC (claimable in phase 3): <span id="claimable_contrib"></span>
+  </div>
+
+  <div>
+    Current account SPC Token balance: <span id="token_balance"></span>
+  </div>
+
+</section>
+
+<section>
+  <h2>ICO User Function</h2>
+  <form id="ico_spc_buy">
+    Buy SPC
+    <input name="eth" value="0.1" autocomplete="off">
+    <button type="submit">Buy</button>
+    <span id="ico_spc_buy_err"></span>
+  </form>
+
+  <form id="claim">
+    Claim SPC
+    <button type="submit">Claim</button>
+    <span id="claim_spc_err"></span>
+  </form>
+</section>
+
+<section>
+  <h2>ICO Owner Function</h2>
+
+  <div>
+    Owner address: <span id="owner_address"></span>
+  </div>
+
+  <form id="ico_spc_whitelist">
+    Whitelist
+    <input name="address" value="" autocomplete="off">
+    <button type="submit">Whitelist</button>
+    <span id="ico_spc_whitelist_err"></span>
+  </form>
+
+  <form id="ico_spc_unwhitelist">
+    Un-Whitelist
+    <input name="address" value="" autocomplete="off">
+    <button type="submit">Un-Whitelist</button>
+    <span id="ico_spc_unwhitelist_err"></span>
+  </form>
+
+  <form id="pause">
+    <button type="submit">Pause</button>
+    <span id="pause_err"></span>
+  </form>
+
+  <form id="resume">
+    <button type="submit">Resume</button>
+    <span id="resume_err"></span>
+  </form>
+
+  <form id="advance_phase">
+    <button type="submit">Advance Phase</button>
+    <span id="advance_phase_err"></span>
+  </form>
+</section>
+
+<section>
+  <h2>SPC Token</h2>
+
+  <div>
+    SPC Token Owner Address: <span id="token_owner_address"></span>
+  </div>
+
+  <div>
+    Treasury Address: <span id="treasury_address"></span>
+  </div>
+
+  <div>
+    Is Transfer tax enabled: <span id="transfer_tax"></span>
+  </div>
+</section>
+
+<script type="module" src="./index.js"></script>

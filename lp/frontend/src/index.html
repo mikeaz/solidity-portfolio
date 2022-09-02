@@ -1,0 +1,212 @@
+<title>SpaceCoin ICO</title>
+<link rel="stylesheet" type="text/css" href="./index.css">
+
+<h1>SpaceCoin ICO</h1>
+
+<section>
+  <h2>Query Blockchain</h2>
+
+  <div>
+    Connected account ETH address: <span id="eth_address"></span>
+  </div>
+  <div>
+    Connected account ETH balance: <span id="eth_balance"></span>
+  </div>
+</section>
+
+<section>
+  <h2>ICO Stats</h2>
+
+  <div>
+    Current phase: <span id="ico_spc_phase"></span>
+  </div>
+
+  <div>
+    Is paused: <span id="ico_spc_pause"></span>
+  </div>
+
+  <div>
+    SPC left to buy (all phases, all accounts): <span id="ico_spc_left"></span>
+  </div>
+
+  <div>
+    Total SPC purchased so far (all accounts): <span id="ico_spc_purchased"></span>
+  </div>
+
+  <div><h2>Current Account</h2></div>
+
+
+  <div>
+    Is current account whitelisted for phase 1: <span id="account_whitelisted"></span>
+  </div>
+
+  <div>
+    Current account claimable SPC (claimable in phase 3): <span id="claimable_contrib"></span>
+  </div>
+
+  <div>
+    Current account SPC Token balance: <span id="token_balance"></span>
+  </div>
+
+</section>
+
+<section>
+  <h2>ICO User Function</h2>
+  <form id="ico_spc_buy">
+    Buy SPC
+    <input name="eth" value="0.1" autocomplete="off">
+    <button type="submit">Buy</button>
+    <span id="ico_spc_buy_err"></span>
+  </form>
+
+  <form id="claim">
+    Claim SPC
+    <button type="submit">Claim</button>
+    <span id="claim_spc_err"></span>
+  </form>
+</section>
+
+<section>
+  <h2>ICO Owner Function</h2>
+
+  <div>
+    Owner address: <span id="owner_address"></span>
+  </div>
+
+  <form id="ico_spc_whitelist">
+    Whitelist
+    <input name="address" value="" autocomplete="off">
+    <button type="submit">Whitelist</button>
+    <span id="ico_spc_whitelist_err"></span>
+  </form>
+
+  <form id="ico_spc_unwhitelist">
+    Un-Whitelist
+    <input name="address" value="" autocomplete="off">
+    <button type="submit">Un-Whitelist</button>
+    <span id="ico_spc_unwhitelist_err"></span>
+  </form>
+
+  <form id="pause">
+    <button type="submit">Pause</button>
+    <span id="pause_err"></span>
+  </form>
+
+  <form id="resume">
+    <button type="submit">Resume</button>
+    <span id="resume_err"></span>
+  </form>
+
+  <form id="advance_phase">
+    <button type="submit">Advance Phase</button>
+    <span id="advance_phase_err"></span>
+  </form>
+</section>
+
+<section>
+  <h2>SPC Token</h2>
+  <div>
+    SPC Token Owner Address: <span id="token_owner_address"></span>
+  </div>
+  <div>
+    Treasury Address: <span id="treasury_address"></span>
+  </div>
+  <div>
+    Is Transfer tax enabled: <span id="transfer_tax"></span>
+  </div>
+</section>
+
+<section>
+  <h2>Pool Stats</h2>
+  <div>
+    SPC balance: <span id="lp_spc_bal"></span>
+  </div>
+  <div>
+    ETH balance: <span id="lp_eth_bal"></span>
+  </div>
+  <div>
+    LP Token Total supply: <span id="lp_total_supply"></span>
+  </div>
+  <div>
+    Spot price: 1 SPC = <span id="lp_spot_price"></span> ETH
+  </div>
+  <div></div>
+  <h2>Current User Stats</h2>
+  <div>
+    LP token balance: <span id="lp_user_bal"></span>
+  </div>
+</section>
+
+<section>
+  <h2>Router Pool Function</h2>
+  <!--     function addLiquidity(uint256 amountSpcIn, uint256 amountSpcMin, uint256 amountEthMin) external payable-->
+  <form id="spc_allow">
+    <button type="submit">Allow Router to spend SPC</button>
+    <span id="spc_allow_msg"></span>
+  </form>
+  <form id="lp_allow">
+    <button type="submit">Allow Router to spend SPC-ETH LP Tokens</button>
+    <span id="lp_allow_msg"></span>
+  </form>
+  <form id="router_add_liq">
+    Add Liquidity
+    <input name="add_amt_eth" value="AMT_ETH" autocomplete="off">
+    <input name="add_amt_spc" value="AMT_SPC" autocomplete="off">
+    <input name="add_eth_min" value="ETH_MIN" autocomplete="off">
+    <input name="add_spc_min" value="SPC_MIN" autocomplete="off">
+    <button type="submit">Add Liquidity</button>
+    <span id="router_add_liq_msg"></span>
+  </form>
+  <form id="router_remove_liq">
+    Remove Liquidity
+    <input name="lp_to_burn" value="0" autocomplete="off">
+    <button type="submit">Remove Liquidity</button>
+    <span id="router_remove_liq_msg"></span>
+  </form>
+</section>
+
+<section>
+  <h2>Router Swap Function</h2>
+  <form id="quote_eth">
+    ETH for SPC
+    <input name="amt_eth" value="AMT_ETH_IN" autocomplete="off">
+    <input name="swap_slippage_eth" value="Slippage %" autocomplete="off">
+    <button type="submit">Quote & Swap</button>
+    <span id="swap_eth_msg"></span>
+  </form>
+  <form id="swap_eth">
+    <div></div>
+    Est. Amt SPC Out: 
+    <span id="amt_spc_out"></span>
+    <div></div>
+    Price Impact: 
+    <span id="swap_eth_impact"></span>
+    <div></div>
+    Min. SPC Out:
+    <span id="min_spc_out"></span>
+    <div></div>
+  </form>
+  <form id="quote_spc">
+    SPC for ETH
+    <input name="amt_spc" value="AMT_SPC_IN" autocomplete="off">
+    <input name="swap_slippage_spc" value="Slippage %" autocomplete="off">
+    <button type="submit">Quote & Swap</button>
+    <span id="swap_spc_msg"></span>
+  </form>
+  <form id="swap_spc">
+    <div></div>
+    Est. Amt ETH Out: 
+    <span id="amt_eth_out"></span>
+    <div></div>
+    Price Impact: 
+    <span id="swap_spc_impact"></span>
+    <div></div>
+    Min. ETH Out:
+    <span id="min_eth_out"></span>
+    <div></div>
+  </form>
+  
+
+</section>
+
+<script type="module" src="./index.js"></script>
