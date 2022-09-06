@@ -25,7 +25,3 @@ An exercise to deploy and upgrade an OpenZeppelin Upgradeable Proxy/Logic contra
 ## merkledrop
 
 A token airdrop contract which distributes airdrops either through an immutable Merkle tree set at contract deployment, or EIP-712 compliant signatures signed by the contract owner.  
-
-## sudoku-audit
-
-An exercise to audit and find security and code quality issues in a highly flawed contract. Contract code is not mine. 
